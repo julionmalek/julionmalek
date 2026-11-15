@@ -310,6 +310,18 @@ window.CONTENT = {
      demo: a path on this domain ("/my-project/") or any URL. repo: GitHub link (optional). */
   projects: [
     {
+      name: "GPU Compute Index",
+      year: "2026",
+      status: "live",
+      desc: {
+        fr: "Un indice de prix quotidien, ouvert et vérifiable, pour la location de GPU (H100, A100), à partir des prix publics d'AWS et d'Azure. Historique depuis 2021, registre infalsifiable, méthodologie écrite.",
+        en: "An open, auditable daily price index for renting GPUs (H100, A100), built from public AWS and Azure prices. History back to 2021, a tamper-evident ledger and a written methodology.",
+      },
+      tags: ["Python", "Data pipelines", "Index methodology", "GitHub Actions", "SVG charts"],
+      demo: "/gpu-compute-index/",
+      repo: "https://github.com/julionmalek/gpu-compute-index",
+    },
+    {
       name: "3615 JULION",
       year: "2026",
       status: "live",

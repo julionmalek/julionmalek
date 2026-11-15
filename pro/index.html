@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julion Malek · Software Engineer</title>
+  <meta name="description" content="Julion Malek, software engineer in New York. Data platforms, AI tools (MCP), Python, PostgreSQL.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/pro.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top"><canvas id="logo-cat" width="28" height="24" aria-hidden="true"></canvas>Julion Malek</a>
+      <nav class="nav-links">
+        <a href="#about" data-t="nav_about">About</a>
+        <a href="#experience" data-t="nav_exp">Experience</a>
+        <a href="#projects" data-t="nav_projects">Projects</a>
+        <a href="#contact" data-t="nav_contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" id="lang" aria-label="Switch language">FR</button>
+        <a class="y2k-btn" id="to-y2k" href="/y2k/"><span data-t="y2k">2001 version</span> ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="eyebrow" data-t="eyebrow">Software Engineer · New York</p>
+        <h1 data-t="hero">I build the plumbing that gets messy data where it needs to go.</h1>
+        <p class="lead" data-t="hero_sub"></p>
+        <div class="cta">
+          <a class="btn primary" id="mail-btn" href="#"><span data-t="cta_mail">Get in touch</span></a>
+          <a class="btn" id="li-btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" id="gh-btn" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="/assets/img/julion-headshot.jpg" alt="Julion Malek">
+        <figcaption><span class="pulse"></span><span data-t="now">Currently at Tagup</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="stats wrap">
+      <div class="stat"><b>170s → 3s</b><span data-t="stat1"></span></div>
+      <div class="stat"><b>&lt; 4s</b><span data-t="stat2"></span></div>
+      <div class="stat"><b>EN · FR</b><span data-t="stat3"></span></div>
+    </section>
+
+    <section class="section wrap about" id="about">
+      <h2 data-t="about_title">About</h2>
+      <div class="about-grid">
+        <div class="about-text" id="about-text"></div>
+        <div class="about-photos">
+          <figure><img src="/assets/img/julion-snow.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="/assets/img/batman-3.jpg" alt="Batman the cat" loading="lazy"><figcaption data-t="batman_cap"></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="experience">
+      <h2 data-t="exp_title">Experience</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="section wrap" id="projects">
+      <h2 data-t="projects_title">Projects</h2>
+      <p class="section-sub" data-t="projects_sub"></p>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="section wrap two-col">
+      <div>
+        <h2 data-t="skills_title">Skills</h2>
+        <dl class="skills" id="skills"></dl>
+      </div>
+      <div>
+        <h2 data-t="edu_title">Education</h2>
+        <div id="edu"></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2 data-t="contact_title">Let's talk.</h2>
+        <p data-t="contact_sub"></p>
+        <a class="big-mail" id="big-mail" href="#"></a>
+        <div class="contact-links">
+          <a id="li-2" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a id="gh-2" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <canvas id="foot-cat" width="64" height="48" aria-hidden="true" title="Batman"></canvas>
+    <p>© 2026 Julion Malek · <span data-t="footer"></span></p>
+    <p><a href="/y2k/" id="psst" data-t="psst"></a></p>
+  </footer>
+
+  <script src="/assets/js/content.js"></script>
+  <script src="/assets/js/sprites.js"></script>
+  <script src="/assets/js/pro.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julion Malek</title>
+  <meta name="description" content="Julion Malek, software engineer in New York. Pick your version: serious, or 2001.">
+  <script>
+    // Returning visitors go straight to the version they picked last time.
+    // Add ?choose to the URL to see this page again.
+    try {
+      var pref = localStorage.getItem("site");
+      if (pref && location.search.indexOf("choose") === -1) location.replace(pref === "y2k" ? "/y2k/" : "/pro/");
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body { background: #f6f4ef; overflow: hidden; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
+    .side {
+      position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 40px 32px; text-decoration: none; overflow: hidden;
+      transition: flex .3s;
+    }
+    .side .go { margin-top: 28px; display: inline-block; transition: transform .2s; }
+    .side:hover .go, .side:focus-visible .go { transform: translateY(-3px) scale(1.04); }
+
+    /* serious */
+    .pro { background: #f6f4ef; color: #1b1a17; font-family: Inter, -apple-system, sans-serif; }
+    .pro .kicker { font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; color: #d2491c; font-weight: 600; }
+    .pro h2 { font: 400 clamp(40px, 5.5vw, 72px)/1 "Instrument Serif", Georgia, serif; margin: 14px 0 12px; letter-spacing: -1px; }
+    .pro p { color: #6b675f; max-width: 320px; margin: 0; line-height: 1.6; }
+    .pro .go { background: #1b1a17; color: #f6f4ef; padding: 12px 24px; border-radius: 999px; font-weight: 500; }
+
+    /* y2k */
+    .y2k {
+      color: #fff; font-family: Verdana, sans-serif;
+      background-color: #07072e;
+      background-image:
+        radial-gradient(1.2px 1.2px at 12px 18px, #fff 99%, transparent),
+        radial-gradient(1px 1px at 47px 66px, #fffbd0 99%, transparent),
+        radial-gradient(1.5px 1.5px at 83px 31px, #cfe6ff 99%, transparent),
+        radial-gradient(1px 1px at 104px 95px, #fff 99%, transparent);
+      background-size: 120px 120px;
+    }
+    .y2k .kicker { font: 22px VT323, monospace; color: #4af6ff; letter-spacing: 2px; }
+    .y2k .kicker::after { content: "█"; animation: blink 1s steps(1) infinite; }
+    .y2k h2 {
+      font: italic 900 clamp(40px, 5.5vw, 72px)/1 Impact, "Arial Black", sans-serif; margin: 12px 0;
+      background: linear-gradient(90deg, #ff3e3e, #ffb13e, #fff23e, #4cff6a, #4ad8ff, #7a6bff, #ff5cff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(3px 3px 0 #1a0050); transform: skewX(-6deg);
+    }
+    .y2k p { font: bold 14px "Comic Sans MS", "Chalkboard SE", cursive; color: #ffd400; max-width: 320px; margin: 0; }
+    .y2k .go {
+      background: linear-gradient(#ff5a1f, #c40000); color: #fff; border: 3px outset #ff9a7a;
+      font: bold 16px "Arial Black", Verdana, sans-serif; padding: 10px 22px;
+      animation: blink 1.2s steps(1) infinite;
+    }
+    .y2k .tag { position: absolute; font: bold 11px Verdana, sans-serif; padding: 3px 8px; transform: rotate(-8deg); }
+    .y2k .t1 { top: 9%; left: 8%; background: #ffd400; color: #000; }
+    .y2k .t2 { bottom: 11%; right: 9%; background: #ff3e3e; color: #fff; transform: rotate(6deg); animation: blink .9s steps(1) infinite; }
+    .y2k .t3 { bottom: 16%; left: 10%; background: #000; color: #43ff6a; font-family: VT323, monospace; font-size: 18px; border: 1px solid #43ff6a; transform: none; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* the question + Batman on the seam */
+    .question {
+      position: fixed; top: 22px; left: 50%; transform: translateX(-50%); z-index: 2;
+      background: #fff; color: #1b1a17; border: 1px solid #e4dfd4; border-radius: 999px;
+      padding: 8px 18px; font: 500 14px Inter, sans-serif; white-space: nowrap; box-shadow: 0 6px 24px rgba(0,0,0,.18);
+    }
+    #seam-cat { position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); image-rendering: pixelated; z-index: 2; pointer-events: none; }
+    .lang {
+      position: fixed; bottom: 16px; left: 16px; z-index: 3; font: 600 12px Inter, sans-serif;
+      background: #fff; border: 1px solid #e4dfd4; border-radius: 999px; padding: 6px 12px; cursor: pointer; color: #1b1a17;
+    }
+    .note { position: fixed; bottom: 18px; right: 18px; z-index: 3; font: 12px Inter, sans-serif; color: #aaa; }
+
+    @media (max-width: 720px) {
+      body { overflow: auto; }
+      .split { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; min-height: 100%; }
+      .question { position: absolute; }
+      #seam-cat { display: none; }
+      .side { padding-top: 72px; }
+      .note { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="question" id="q">How do you want to visit?</div>
+  <main class="split">
+    <a class="side pro" href="/pro/" data-site="pro">
+      <span class="kicker" data-t="pro_k">Serious</span>
+      <h2>Julion Malek</h2>
+      <p data-t="pro_p">Software engineer in New York. Experience, projects, contact. Clean and to the point.</p>
+      <span class="go" data-t="pro_go">Enter →</span>
+    </a>
+    <a class="side y2k" href="/y2k/" data-site="y2k">
+      <span class="tag t1" data-t="t1">BEST VIEWED AT 800×600</span>
+      <span class="tag t3">3615 JULION</span>
+      <span class="tag t2">NEW!</span>
+      <span class="kicker" data-t="y2k_k">C:\JULION\2001&gt;</span>
+      <h2 data-t="y2k_h">2001 MODE</h2>
+      <p data-t="y2k_p">Pop-ups, a Minitel, pixel Batman and games. Like it's 2001 (the year I was born).</p>
+      <span class="go" data-t="y2k_go">ENTER !!!</span>
+    </a>
+  </main>
+  <canvas id="seam-cat" width="54" height="42" aria-hidden="true"></canvas>
+  <button class="lang" id="lang">FR</button>
+  <span class="note" data-t="note">We'll remember your pick</span>
+
+  <script src="/assets/js/sprites.js"></script>
+  <script>
+    (function () {
+      var T = {
+        en: { q: "How do you want to visit?", pro_k: "Serious", pro_p: "Software engineer in New York. Experience, projects, contact. Clean and to the point.", pro_go: "Enter →",
+              t1: "BEST VIEWED AT 800×600", y2k_k: "C:\\JULION\\2001>", y2k_h: "2001 MODE", y2k_p: "Pop-ups, a Minitel, pixel Batman and games. Like it's 2001 (the year I was born).", y2k_go: "ENTER !!!", note: "We'll remember your pick", lang: "FR" },
+        fr: { q: "Comment voulez-vous visiter ?", pro_k: "Sérieux", pro_p: "Ingénieur logiciel à New York. Parcours, projets, contact. Clair et net.", pro_go: "Entrer →",
+              t1: "AFFICHAGE OPTIMAL 800×600", y2k_k: "C:\\JULION\\2001>", y2k_h: "MODE 2001", y2k_p: "Des pop-ups, un Minitel, Batman en pixels et des jeux. Comme en 2001 (l'année de ma naissance).", y2k_go: "ENTRER !!!", note: "Votre choix sera mémorisé", lang: "EN" },
+      };
+      var get = function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } };
+      var set = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
+      var lang = get("lang", (navigator.language || "en").toLowerCase().indexOf("fr") === 0 ? "fr" : "en");
+      function render() {
+        var t = T[lang];
+        document.documentElement.lang = lang;
+        document.getElementById("q").textContent = t.q;
+        document.getElementById("lang").textContent = t.lang;
+        document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = t[el.dataset.t]; });
+      }
+      document.getElementById("lang").addEventListener("click", function () { lang = lang === "fr" ? "en" : "fr"; set("lang", lang); render(); });
+      document.querySelectorAll("[data-site]").forEach(function (a) { a.addEventListener("click", function () { set("site", a.dataset.site); }); });
+      render();
+
+      // Batman sits on the seam and looks toward whichever side you hover
+      var c = document.getElementById("seam-cat").getContext("2d");
+      var draw = function (flip) { c.clearRect(0, 0, 54, 42); Sprites.draw(c, "sit", 3, 3, 3, { flip: flip, outline: "rgba(255,255,255,.9)" }); };
+      draw(true);
+      document.querySelector(".pro").addEventListener("mouseenter", function () { draw(true); });
+      document.querySelector(".y2k").addEventListener("mouseenter", function () { draw(false); });
+    })();
+  </script>
+</body>
+</html>

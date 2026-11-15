@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3615 JULION — La page perso de Julion Malek</title>
+  <meta name="description" content="Julion Malek, software engineer in New York. Born in 2001, like this website.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <!-- ================= 2001 HOMEPAGE FRAME ================= -->
+  <header class="top">
+    <h1 class="wordart" data-i18n="title">~*~ La page perso de Julion ~*~</h1>
+    <marquee class="ticker" scrollamount="5" data-i18n="ticker">★ Bienvenue sur mon site !!! ★ Branchez le Julitel ci-dessous et tapez 3615 JULION ★ Batman (le chat) est le webmaster ★ Signez mon livre d'or ★ Ce site est optimisé pour un modem 56k ★</marquee>
+    <div class="top-buttons">
+      <button class="flag-btn" id="lang-toggle" title="Français / English">
+        <span class="flag" id="flag"><i></i><i></i><i></i></span>
+        <span id="lang-label">ENGLISH</span>
+      </button>
+      <button class="bevel-btn" id="boring-btn" data-i18n="boring">😐 Mode sérieux (recruteurs)</button>
+      <button class="bevel-btn" id="sound-btn">🔊</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT COLUMN -->
+    <aside class="col left">
+      <section class="box">
+        <h2 class="box-title blink-slow" data-i18n="welcome">★ Bienvenue ★</h2>
+        <div class="polaroid tilt-l" data-view="/assets/img/julion-snow.jpg" data-cap="cap_snow">
+          <img src="/assets/img/julion-snow.jpg" alt="Julion in the snow" loading="lazy">
+          <span data-i18n="cap_me">C'est moi !</span>
+        </div>
+        <p class="small" data-i18n="intro">Salut ! Je m'appelle Julion. Je suis né en 2001, tout comme ce site. Je suis ingénieur logiciel à New York. Bonne visite !!</p>
+      </section>
+
+      <section class="box">
+        <h2 class="box-title" data-i18n="visitors">Visiteurs</h2>
+        <div class="counter" id="counter" aria-label="visitor counter"></div>
+        <p class="tiny" data-i18n="since">depuis le 01/01/2001</p>
+      </section>
+
+      <section class="box">
+        <h2 class="box-title" data-i18n="album">Album photo</h2>
+        <div class="thumbs">
+          <button class="thumb" data-view="/assets/img/julion-guinness.jpg" data-cap="cap_guinness"><img src="/assets/img/julion-guinness.jpg" alt="" loading="lazy"></button>
+          <button class="thumb" data-view="/assets/img/julion-puppy.jpg" data-cap="cap_puppy"><img src="/assets/img/julion-puppy.jpg" alt="" loading="lazy"></button>
+          <button class="thumb" data-view="/assets/img/batman-4.jpg" data-cap="cap_b4"><img src="/assets/img/batman-4.jpg" alt="" loading="lazy"></button>
+        </div>
+        <p class="tiny" data-i18n="click_enlarge">cliquez pour agrandir</p>
+      </section>
+
+      <section class="box games-box">
+        <h2 class="box-title" data-i18n="games_room">🕹️ Salle de jeux</h2>
+        <button class="game-btn" data-game="snake"><canvas class="sprite" data-sprite="face" width="24" height="20"></canvas><span data-i18n="g_snake">Batman Serpent</span></button>
+        <button class="game-btn" data-game="catch"><canvas class="sprite" data-sprite="croq" width="24" height="24"></canvas><span data-i18n="g_catch">Pluie de croquettes</span></button>
+        <button class="game-btn" data-game="laser"><span class="laser-dot"></span><span>Laser !</span></button>
+      </section>
+
+      <section class="box webring">
+        <span>&laquo;</span>
+        <span data-i18n="webring">Webring des Chats Noirs</span>
+        <span>&raquo;</span>
+      </section>
+    </aside>
+
+    <!-- CENTER: THE JULITEL -->
+    <section class="middle">
+      <div class="julitel" id="julitel">
+        <div class="case">
+          <div class="bezel">
+            <div class="screen" id="screen" tabindex="0" aria-live="polite">
+              <div class="screen-inner" id="screen-inner"></div>
+              <div class="scanlines"></div>
+              <div class="glare"></div>
+            </div>
+          </div>
+          <div class="case-bottom">
+            <span class="brand">JULITEL</span>
+            <span class="led" id="led"></span>
+            <button class="power" id="power" title="Marche / Arrêt">⏻</button>
+          </div>
+        </div>
+        <div class="keyboard">
+          <div class="keypad" id="keypad">
+            <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+            <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+            <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+            <button data-key="*">*</button><button data-key="0">0</button><button data-key="#">#</button>
+          </div>
+          <div class="fkeys">
+            <button class="fk conn" data-fn="CONNEXION">Connexion<br>Fin</button>
+            <button class="fk" data-fn="SOMMAIRE">Sommaire</button>
+            <button class="fk" data-fn="ANNULATION">Annulation</button>
+            <button class="fk" data-fn="RETOUR">Retour</button>
+            <button class="fk" data-fn="REPETITION">Répétition</button>
+            <button class="fk" data-fn="GUIDE">Guide</button>
+            <button class="fk" data-fn="CORRECTION">Correction</button>
+            <button class="fk" data-fn="SUITE">Suite</button>
+            <button class="fk envoi" data-fn="ENVOI">Envoi</button>
+          </div>
+        </div>
+      </div>
+      <p class="hint" data-i18n="hint">Astuce : utilisez votre clavier ! Chiffres + Entrée = ENVOI, flèches = SUITE / RETOUR, Échap = SOMMAIRE</p>
+    </section>
+
+    <!-- RIGHT COLUMN -->
+    <aside class="col right">
+      <section class="box messenger">
+        <div class="msn-head">Messenger</div>
+        <div class="msn-row"><span class="dot busy"></span> <b>Julion</b> <span data-i18n="busy">(Occupé)</span></div>
+        <div class="msn-row now"><span class="vinyl"></span><span id="now-playing"></span></div>
+        <div class="msn-row"><span class="dot online"></span> <b>Batman</b> <span data-i18n="online">(En ligne, dort)</span></div>
+      </section>
+
+      <section class="box">
+        <h2 class="box-title" data-i18n="links">Mes liens</h2>
+        <ul class="links">
+          <li><a href="https://www.linkedin.com/in/julion-malek-7a814a267/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/julionmalek" target="_blank" rel="noopener">GitHub</a> <span class="tiny" data-i18n="wip">(en construction)</span></li>
+          <li><a href="#" data-goto="contact" data-i18n="email_me">M'écrire</a></li>
+        </ul>
+      </section>
+
+      <section class="box">
+        <h2 class="box-title"><span class="new">NEW!</span> <span data-i18n="my_projects">Mes projets</span></h2>
+        <ul class="links" id="y2k-projects"></ul>
+        <p class="tiny" data-i18n="more_soon">D'autres arrivent bientôt...</p>
+      </section>
+
+      <section class="box">
+        <h2 class="box-title" data-i18n="card_title">Ma carte rookie</h2>
+        <button class="mini-card" id="open-card" aria-label="Open baseball card">
+          <img src="/assets/img/julion-headshot.jpg" alt="">
+          <span>ROOKIE 2001</span>
+        </button>
+      </section>
+
+      <section class="box badges">
+        <span class="b88 b-cat">BATMAN<br>APPROVED</span>
+        <span class="b88 b-y2k">Y2K<br>COMPLIANT</span>
+        <span class="b88 b-fr">FAIT À<br>NEW YORK</span>
+        <span class="b88 b-56k">56K<br>FRIENDLY</span>
+        <span class="b88 b-np">MADE WITH<br>NOTEPAD</span>
+        <span class="b88 b-no">NO<br>FRAMES</span>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <div class="construction"><span data-i18n="construction">🚧 SITE EN CONSTRUCTION 🚧</span></div>
+    <p data-i18n="best_viewed">Meilleur affichage en 800×600 avec Netscape 6</p>
+    <p><span data-i18n="updated">Dernière mise à jour :</span> 14/11/2026 · © 2001–2026 Julion Malek · <span data-i18n="webmaster">Webmaster : Batman</span></p>
+  </footer>
+
+  <div id="windows"></div>
+  <canvas id="cat" width="48" height="36" aria-hidden="true"></canvas>
+  <div id="cat-bubble" class="cat-bubble" hidden></div>
+
+  <script src="/assets/js/content.js"></script>
+  <script src="/assets/js/ui.js"></script>
+  <script src="/assets/js/sprites.js"></script>
+  <script src="/assets/js/games.js"></script>
+  <script src="/assets/js/minitel.js"></script>
+  <script src="/assets/js/cat.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
